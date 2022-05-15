@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculadora</title>
+</head>
+<body>
+    <div id="container">
+
+        <input type="number" name="input1" id="input1" placeholder="Numero 1">
+        <input type="number" name="input2" id="input2" placeholder="Numero 2">
+
+        <select name="ops" id="ops">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+
+        <input type="submit" value="=" onclick="calc()">
+
+        <input type="submit" value="C" onclick="reset">
+
+    </div>
+
+    <script>
+
+        function calc() {
+
+        var res = document.getElementById("res")
+
+         if(res){
+                res.parentNode.removeChild(res)
+            }
+
+        var op = document.getElementById("ops").value
+
+        var n1 = document.getElementById("input1").value
+
+        var n2 = document.getElementById("input2").value
+
+        switch(op){
+            case '+':
+                var res = Number(n1) + Number(n2)
+                break
+
+            case '-':
+                var res = Number(n1) - Number(n2)
+                break
+
+            case '*':
+                var res = Number(n1) * Number(n2)
+                break
+
+            case '/':
+                var res = Number(n1) / Number(n2)
+                break
+
+        }
+
+        var obj = {
+            "n1": document.getElementById("input1").value,
+            "n2": n2,
+            "op": document.getElementById("ops").value,
+
+        }
+
+        console.log("objeto: ", obj)
+
+        var elem = document.createElement("p");
+        elem.setAttribute("id", "res")
+
+        var text = document.createTextNode(res)
+
+        elem.appendChild(text)
+
+        elem.style.fontsize = "24px",
+        document.getElementById("container").appendChild(elem)
+
+        }
+
+        function reset() {
+            
+            document.getElementById("input1").value = "";
+            document.getElementById("input2").value = "";
+
+            var res = document.getElementById("res")
+
+            if(res){
+                res.parentNode.removeChild(res)
+            }
+        }
+        
+
+    </script>
+</body>
+</html>

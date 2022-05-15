@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container" id="container">
+
+        <p class="p1" id="p1">
+            Titulo
+        </p>
+
+        <div class="forms" id="forms">
+            <input type="text" name="name" id="name" placeholder="Nome" value="cassiano">
+
+            <input type="text" class="age" id="age" placeholder="idade">
+        </div>
+
+        <div id="end" class="footer">
+            fim
+        </div>
+
+    </div>
+
+    <script>
+
+        //obter elemento pelo id da tag
+        var name = document.getElementById("name");
+
+        //obter o valor do elemento pelo id da tag
+        var user_name = document.getElementById("name").value;
+
+        console.log("elemento name", name);
+        console.log("valor do elemento name", user_name);
+
+        //obtendo a primeira ocorrencia de um elemento com o seletor css passado
+        var input = document.querySelector("input")
+        console.log("campo de texto", input);
+
+        //obtendo todas as ocorrencia de um elemento com o seletor css passado
+        var inputs = document.querySelectorAll("input")
+        console.log("campo de texto", inputs);
+
+        //obtendo elementos pelo nome da tag
+        var tag = document.getElementsByTagName("div")
+        console.log("elementos pelo nome da tag", tag);
+
+        //obtendo elementos pelo nome da classe css
+        var classes = document.getElementsByClassName("container")
+        console.log("elemento pelo nome da classe css:", classes);
+
+
+    </script>
+
+</body>
+</html>
